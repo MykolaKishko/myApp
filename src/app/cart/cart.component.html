@@ -1,0 +1,10 @@
+<div class="container">
+  <p class="total-price">Total price ${{ totalPrice }}</p>
+  <div class="item" *ngFor="let p of cartProduct">
+    <div class="name">{{ p.name }}</div>
+    <div class="price">Price {{ p.price }}$</div>
+    <div (click)="remove(p.id)" class="remove">
+      <p >x</p>
+    </div>
+  </div>
+</div>
