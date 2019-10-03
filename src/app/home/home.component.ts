@@ -24,10 +24,18 @@ export class HomeComponent implements OnInit {
           x.push(element);
           cartProduct = x;
           localStorage.setItem('cardProducts', JSON.stringify(cartProduct));
-        }
-        else {
-          cartProduct.push(element);
-          localStorage.setItem('cardProducts', JSON.stringify(cartProduct));
+        } else {
+          let arr = [];
+          cartProduct.forEach(e => {
+            if(e.id === id ) {
+              arr.push(true);
+            }
+          });
+          if(arr.includes(true)) {
+          } else {
+            cartProduct.push(element);
+            localStorage.setItem('cardProducts', JSON.stringify(cartProduct));
+          }
         }
       }
     });
