@@ -10,7 +10,7 @@ export class CartComponent implements OnInit {
   cartProduct =  JSON.parse(localStorage.getItem('cardProducts'));
   totalPrice = 0;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.cartProduct.forEach( e => {
