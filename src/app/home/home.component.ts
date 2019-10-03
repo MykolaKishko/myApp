@@ -10,7 +10,7 @@ import { ProductsService } from '../products.service';
 export class HomeComponent implements OnInit {
 
   products = this.ProductsService.products;
- 
+
   constructor( private ProductsService: ProductsService) { }
 
   ngOnInit() {}
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   addToCart(id) {
     let cartProduct: any  = JSON.parse(localStorage.getItem('cardProducts'));
     this.products.forEach(element => {
-      if(element.id == id) {
+      if(element.id === id) {
         if (cartProduct === null) {
           const x = [];
           x.push(element);

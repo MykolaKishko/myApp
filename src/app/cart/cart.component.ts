@@ -15,16 +15,16 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartProduct.forEach( (e, i) => {
       this.totalPrice += e.price;
-    }) 
+    })
   }
 
   remove(id) {
     this.cartProduct.forEach((element, i) => {
-      if(element.id == id) {
+      if(element.id === id) {
         this.cartProduct.splice(i, 1)
         localStorage.setItem('cardProducts', JSON.stringify(this.cartProduct)); 
-        this.totalPrice -= element.price;   
-      } 
-    });    
+        this.totalPrice -= element.price;
+      }
+    });
   }
-} 
+}
