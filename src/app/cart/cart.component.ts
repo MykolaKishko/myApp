@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.cartProduct.forEach( (e, i) => {
+    this.cartProduct.forEach( e => {
       this.totalPrice += e.price;
     })
   }
